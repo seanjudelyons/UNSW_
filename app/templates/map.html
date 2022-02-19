@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+    {% if current_user.is_authenticated %}
+
+      <!-- User is not logged in -->
+      {% else %}
+
+        <h1 class="ui header">Meet Our Clinicians</h1>
+        <div class="ui divider"></div>
+
+    {% endif %}
+
+    
+
+	
+    <center>
+    <img src="{{ url_for('static', filename='img/pexelsRodnae.jpg') }}" width="250" height="350">
+    <h4><font color='black'>John Doe, MD (Usyd) & BBioMed (UNSW)</font></h4>
+
+    {% if current_user.is_authenticated %}
+        <h2 class="ui header">Your Measurements</h2>
+    {% endif %}
+   
+
+{% endblock %}

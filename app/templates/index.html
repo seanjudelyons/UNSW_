@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+    {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<center>
+  <img src="{{ url_for('static', filename='img/UNSWlogo.png') }}">
+  <h2><font color='black'>Patient and Clinician Portal</font></h2>
+
+
+<div class="row">
+  <div class="column" style="background-color:#fdfefa;">
+    <h2>API Access</h2>
+    <p>• Data safe and secure with encryption</p>
+    <p>• Support across mobile platforms</p>
+    <p>• Remain connected with live updates</p>
+
+
+
+  </div>
+  <div class="column" style="background-color:#e0dfe0;">
+    <h2>Clinicians</h2>
+    <p>• Administrators can add new Clinicians</p>
+    <p>• Clinicians have exclusive API access to health measurements</p>
+    <p>• Clinicians recieve real time alerts </p>
+
+  </form>
+  </div>
+  <div class="column" style="background-color:#fdfefa;">
+    <h2>Patients</h2>
+    <p>• Update measurements with an interactive and userfriendly GUI</p>
+    <p>• Stay connected to you Clinician</p>
+    <p>• 24/7 support</p>
+    
+
+    
+  </form>
+  </div>
+
+{% if current_user.is_authenticated %}
+
+
+
+<h2><font color='black'>Success!</font></h2>
+
+  	{% endif %}
+
+{% endblock %}
