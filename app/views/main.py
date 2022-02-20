@@ -3,7 +3,6 @@ from app import app
 import random
 import os
 from flask import flash
-import numpy as np
 from app.forms import user as user_forms
 from app import models
 
