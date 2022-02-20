@@ -81,7 +81,7 @@ def signin():
                 login_user(user)
                 # Send back to the home page
                 flash('Succesfully signed in.', 'positive')
-                return redirect(url_for('index'))
+                return redirect(url_for('map'))
             else:
                 flash('The password you have entered is wrong.', 'negative')
                 return redirect(url_for('userbp.signin'))
@@ -90,25 +90,6 @@ def signin():
             return redirect(url_for('userbp.signin'))
     return render_template('user/signin.html', form=form, title='Sign in')
 
-
-@userbp.route('/measurement', methods=['GET', 'POST'])
-def measurement():
-    form = user_forms.Measurements()
-    if form.validate_on_submit():
-        # Create a user who hasn't validated his email address
-        meas = models.Measure(
-            a=form.age.data,
-            h=form.heart_rate.data,
-            w=form.weight.data,
-            b=form.blood_pressure.data
-        )
-        # Insert the user in the database
-        #db.session.add(meas)
-        #db.session.commit()
-        
-        flash('done')
-        return redirect(url_for('index'))
-    return render_template('/measurement.html', form=form)
 
 
 '''

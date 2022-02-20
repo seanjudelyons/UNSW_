@@ -5,19 +5,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="ui form-user center raised very padded text container segment">
-	<form class="ui form" action="/measurement" method="post">
-		<h4 class="ui dividing header">For Clinicians Only</h4>
-		{{ m.render_field(form.age) }}
-		{{ m.render_field(form.heart_rate) }}
-		{{ m.render_field(form.weight) }}
-		{{ m.render_field(form.blood_pressure) }}
-		{{ form.csrf_token }}
-		  <button class="ui secondary button" type="submit">Submit</button>
-	</form>
-</div>
 
-<!-- User 
+
+
 
 <style>
 
@@ -155,7 +145,7 @@ fieldset button
           <br>
           <br>
           <center>
-        <a class="ui secondary button" href="/user/account">Update</a>
+        <a class="ui secondary button" href="/map">Update</a>
       </center>
       </div>
   </div>
@@ -168,7 +158,4 @@ fieldset button
 
 
 {% endblock %}
-
-
-is not logged in -->
 

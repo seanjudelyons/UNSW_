@@ -2,6 +2,7 @@ from flask import render_template, jsonify, Flask, redirect, url_for, request
 from app import app
 import random
 import os
+from flask import flash
 import numpy as np
 from app.forms import user as user_forms
 from app import models
@@ -17,16 +18,18 @@ def measurement():
     if form.validate_on_submit():
         # Create a user who hasn't validated his email address
         meas = models.Measure(
-            a=form.age.data,
-            h=form.heart_rate.data,
-            w=form.weight.data,
-            b=form.blood_pressure.data
+            age=form.age.data,
+            heart_rate=form.heart_rate.data,
+            weight=form.weight.data,
+            blood_pressure=form.blood_pressure.data
         )
         # Insert the user in the database
         #db.session.add(meas)
-        #db.session.commit()sz
-        return redirect(url_for('index'))
-    return render_template('measurement.html', form=form)
+        #db.session.commit()
+        
+        flash('done')
+        return redirect(url_for('map'))
+    return render_template('/measurement.html', form=form)
 
 
 @app.route('/index')

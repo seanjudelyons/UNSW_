@@ -90,10 +90,10 @@ class Measurements(Form):
     age = TextField(validators=[Required(), Length(min=1)],
                       description='eg. 34')
                       
-    heart_rate = TextField(validators=[Required(), Length(min=2)],
+    heart_rate = TextField(validators=[Required(), Length(min=1)],
                      description='BPM')
 
     weight = TextField(validators=[Required(), Length(min=1)],
                      description='KG')
-    blood_pressure = TextField(validators=[Required(), Length(min=2)],
+    blood_pressure = TextField(validators=[Required(), Length(min=1)],
                      description='mm Hg')
